@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Je savais que tu dirais OUIII</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./yes_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">Je savais que tu dirais OUIII 💖</h1>
+        <p class="subtitle">Officiellement ensemble, jusqu'à Saturne et au-delà 🪐</p>
+        <div class="gif_container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" alt="GIF de joie">
+        </div>
+    </div>
+    <h2 class="cats_title">Des fleurs pour toi 🌷💐</h2>
+    <div class="cats_gallery"></div>
+    <script src="galaxy.js"></script>
+    <script>
+        // Plein de chats avec des fleurs
+        const catGifs = [
+            'MnkVb2TyZ08mZEkhUU', 'dnEdk09qJftEJv8YMC', 'N4nWAyzWWghneIaulh',
+            '5SbA6ZRhiI5jriUwqu', 'wSxNZ8sksBiV2NVOfq', 'QsomqbDcRm9xMFxJMu',
+            'onFDprGyJ1gOZ4CgOq', 'm4nNkKCgQi2IsxUC2P', 'WTVhukv6HfMkHqYHrD',
+            'fR9vFhpQX1qZmBiXgF', '6Ee25N9KcBPtSrJFVz', '7zzjU4ToWpasY36ab4',
+            'DrnAYezNaxgK3F69JE', '6C5LFuLcnhTZeypW0E'
+        ];
+        const gallery = document.querySelector('.cats_gallery');
+        catGifs.forEach(id => {
+            const img = document.createElement('img');
+            img.src = `https://media.giphy.com/media/${id}/giphy.gif`;
+            img.alt = 'Chat avec des fleurs';
+            img.loading = 'lazy';
+            gallery.appendChild(img);
+        });
+
+        // Petits cœurs et tulipes qui montent
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = ['💖', '💕', '🌷', '💗', '🌷', '🌸'][Math.floor(Math.random() * 6)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 16 + 14) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 7000);
+        }, 350);
+    </script>
+</body>
+</html>

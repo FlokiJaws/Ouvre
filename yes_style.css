@@ -1,0 +1,61 @@
+.header_text {
+    font-size: clamp(2em, 7vw, 3em);
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.gif_container img {
+    width: 100%;
+    max-width: 420px;
+    max-height: none;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 2;
+    pointer-events: none;
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+}
+
+body {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cats_title {
+    position: relative;
+    z-index: 1;
+    margin: 40px 0 16px;
+    font-size: clamp(1.4em, 5vw, 2em);
+    text-align: center;
+}
+
+.cats_gallery {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    columns: 3 220px;
+    column-gap: 14px;
+}
+
+.cats_gallery img {
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    break-inside: avoid;
+    display: block;
+    box-shadow: 0 0 20px rgba(255, 159, 200, 0.25);
+}

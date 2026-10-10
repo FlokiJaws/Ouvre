@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 16px;
+    overflow-x: hidden;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    color: #fff;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(138, 43, 226, 0.35), transparent 55%),
+        radial-gradient(ellipse at 80% 70%, rgba(255, 64, 160, 0.25), transparent 50%),
+        radial-gradient(ellipse at 60% 10%, rgba(64, 120, 255, 0.25), transparent 45%),
+        linear-gradient(180deg, #05010f 0%, #120a2e 50%, #0a0418 100%);
+}
+
+/* Fond galaxie */
+.galaxy-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.saturn {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.25));
+    animation: float 9s ease-in-out infinite;
+}
+
+.saturn svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50%      { transform: translateY(-14px) rotate(4deg); }
+}
+
+/* Carte centrale */
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    width: 100%;
+    padding: 32px 24px;
+    border-radius: 24px;
+    background: rgba(20, 10, 45, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 40px rgba(180, 100, 255, 0.25);
+}
+
+h1 {
+    font-size: clamp(1.8em, 6vw, 2.6em);
+    margin: 0 0 8px;
+    background: linear-gradient(90deg, #ff9fc8, #ffffff, #c9a7ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(255, 159, 200, 0.3);
+}
+
+.buttons {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.yes-button,
+.no-button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.4em;
+    padding: 0.45em 1.1em;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: font-size 0.3s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #ff4fa0, #b44dff);
+    box-shadow: 0 0 20px rgba(255, 79, 160, 0.5);
+}
+
+.no-button {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.no-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.yes-button:hover,
+.no-button:not(:disabled):hover {
+    transform: scale(1.05);
+}
+
+.yes-button:hover {
+    box-shadow: 0 0 30px rgba(255, 79, 160, 0.8);
+}
+
+.gif_container img {
+    max-width: 100%;
+    max-height: 260px;
+    height: auto;
+    border-radius: 16px;
+    margin-top: 24px;
+}
